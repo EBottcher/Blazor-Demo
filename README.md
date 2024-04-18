@@ -1,2 +1,3 @@
 # Blazor-Demo
-A simple blazor app
+A simple blazor app.
+Testing build on Azure Pipeline
