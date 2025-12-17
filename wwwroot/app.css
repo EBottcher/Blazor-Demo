@@ -13,7 +13,6 @@
     --validation-error: #e50000;
     --validation-success: #26b050;
     --border-color: #929292;
-    --content-bg: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -31,12 +30,11 @@
     --validation-error: #ff5252;
     --validation-success: #4caf50;
     --border-color: #606060;
-    --content-bg: #1a1a1a;
 }
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: var(--content-bg);
+    background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
