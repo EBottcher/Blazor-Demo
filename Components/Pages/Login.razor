@@ -1,0 +1,79 @@
+@page "/login"
+@rendermode InteractiveServer
+
+<PageTitle>Login</PageTitle>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <h1>Login</h1>
+        
+        <EditForm Model="@loginModel" OnValidSubmit="@HandleLogin" FormName="loginForm">
+            <DataAnnotationsValidator />
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Email or Username</label>
+                <InputText id="email" @bind-Value="loginModel.Email" class="form-control" placeholder="Enter your email or username" />
+                <ValidationMessage For="@(() => loginModel.Email)" />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" type="password" @bind="loginModel.Password" class="form-control" placeholder="Enter your password" />
+                <ValidationMessage For="@(() => loginModel.Password)" />
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </div>
+
+            <div class="text-center">
+                <a href="/forgotpassword" class="btn-link">Forgot my password?</a>
+            </div>
+
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger mt-3" role="alert">
+                    @errorMessage
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success mt-3" role="alert">
+                    @successMessage
+                </div>
+            }
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+
+    private void HandleLogin()
+    {
+        // Clear previous messages
+        errorMessage = string.Empty;
+        successMessage = string.Empty;
+
+        // Placeholder for actual authentication logic
+        // In a real application, this would validate credentials against a database or identity provider
+        successMessage = "Login successful! Redirecting...";
+        
+        // Reset form after successful submission (optional)
+        // loginModel = new LoginModel();
+    }
+
+    public class LoginModel
+    {
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Email or username is required.")]
+        [System.ComponentModel.DataAnnotations.StringLength(100, ErrorMessage = "Email or username must be between 3 and 100 characters.", MinimumLength = 3)]
+        public string Email { get; set; } = string.Empty;
+
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Password is required.")]
+        [System.ComponentModel.DataAnnotations.StringLength(100, ErrorMessage = "Password must be at least 6 characters.", MinimumLength = 6)]
+        public string Password { get; set; } = string.Empty;
+    }
+}
