@@ -1,8 +1,10 @@
 using Blazor_Demo.Components;
+using Blazor_Demo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<ThemeService>();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
