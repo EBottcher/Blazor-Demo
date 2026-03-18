@@ -49,3 +49,82 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+/* =====================
+   Dark mode global styles
+   ===================== */
+
+html.dark-mode,
+html.dark-mode body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+html.dark-mode a,
+html.dark-mode .btn-link {
+    color: #5eb8ff;
+}
+
+html.dark-mode .btn-primary {
+    background-color: #1565c0;
+    border-color: #0d47a1;
+}
+
+html.dark-mode .btn-primary:hover {
+    background-color: #0d47a1;
+    border-color: #083579;
+}
+
+html.dark-mode .btn:focus,
+html.dark-mode .btn:active:focus,
+html.dark-mode .btn-link.nav-link:focus,
+html.dark-mode .form-control:focus,
+html.dark-mode .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem #121212, 0 0 0 0.25rem #5eb8ff;
+}
+
+html.dark-mode .top-row {
+    background-color: #1e1e2e;
+    border-bottom-color: #444;
+    color: #e0e0e0;
+}
+
+html.dark-mode .top-row a {
+    color: #5eb8ff;
+}
+
+html.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark-mode .table {
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+html.dark-mode .table > :not(caption) > * > * {
+    background-color: #1e1e2e;
+    color: #e0e0e0;
+    border-bottom-color: #444;
+}
+
+html.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #252535;
+    color: #e0e0e0;
+}
+
+html.dark-mode .table > thead > tr > th {
+    background-color: #16213e;
+    color: #e0e0e0;
+}
+
+html.dark-mode .form-control,
+html.dark-mode .form-select {
+    background-color: #2a2a3a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+html.dark-mode .form-control::placeholder {
+    color: #888;
+}
